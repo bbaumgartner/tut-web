@@ -26,7 +26,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     http.authorizeUrls()
         .antMatchers("/order/**").hasRole("USER")
         .antMatchers("/checkout").hasRole("USER")
-        .anyRequest().anonymous()
         .and()
         //This will generate a login form if none is supplied.
         .formLogin();
